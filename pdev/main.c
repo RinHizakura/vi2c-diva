@@ -6,19 +6,23 @@
 
 #define DEVICE_NAME "diva-i2c"
 
+static void diva_i2c_dummy_release(struct device *dev) {}
+
 static struct platform_device diva_pdev = {
     .name = DEVICE_NAME,
     .id = -1,
+    .dev.release = diva_i2c_dummy_release,
 };
 
 static int diva_i2c_probe(struct platform_device *pdev)
 {
-    return -1;
+    printk("Connect");
+    return 0;
 }
 
 static int diva_i2c_remove(struct platform_device *pdev)
 {
-    return -1;
+    return 0;
 }
 
 static struct platform_device_id diva_idtbl[] = {
