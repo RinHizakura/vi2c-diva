@@ -1,6 +1,6 @@
 MODULENAME := i2c-diva
 obj-m += $(MODULENAME).o
-$(MODULENAME)-y += main.o
+$(MODULENAME)-y += main.o pdev_drv.o
 
 KERNELDIR ?= /lib/modules/`uname -r`/build
 PWD       := $(shell pwd)
@@ -10,3 +10,9 @@ all:
 
 clean:
 	$(MAKE) -C $(KERNELDIR) M=$(PWD) clean
+
+insert: all
+	sudo insmod $(MODULENAME).ko
+
+remove:
+	sudo rmmod $(MODULENAME).ko
