@@ -1,4 +1,4 @@
-SUBDIRS = pdev
+SUBDIRS = pdev adap
 
 GIT_HOOKS := .git/hooks/applied
 $(GIT_HOOKS):
@@ -6,7 +6,7 @@ $(GIT_HOOKS):
 	@echo
 
 .PHONY: all clean $(SUBDIRS)
-all: subdirs
+all: $(GIT_HOOKS) subdirs
 
 subdirs: $(SUBDIRS)
 	for dir in $(SUBDIRS); do \
