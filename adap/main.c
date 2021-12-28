@@ -1,6 +1,6 @@
-#define pr_fmt(fmt) "[i2c-diva]" fmt
+#define pr_fmt(fmt) "[i2c-diva-adap] " fmt
 
-#include "pdev_drv.h"
+#include <linux/module.h>
 #include <linux/i2c.h>
 #include <linux/mod_devicetable.h>
 #include <linux/platform_device.h>
@@ -67,7 +67,12 @@ struct platform_driver diva_i2c_driver = {
     .remove = diva_i2c_remove,
     .driver =
         {
-            .name = DEVICE_NAME,
+            .name = "i2c-diva",
             .of_match_table = diva_i2c_of_match,
         },
 };
+module_platform_driver(diva_i2c_driver);
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("RinHizakura");
+MODULE_DESCRIPTION("The virtual \"diva\" I2c bus adapter \"diva\"");

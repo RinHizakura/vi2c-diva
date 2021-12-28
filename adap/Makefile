@@ -1,4 +1,4 @@
-MODULENAME := diva-pdev
+MODULENAME := i2c-diva-adap
 obj-m += $(MODULENAME).o
 $(MODULENAME)-y += main.o
 
