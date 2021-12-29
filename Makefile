@@ -1,4 +1,4 @@
-SUBDIRS = pdev adap
+SUBDIRS = pdev adap diva-dev
 
 GIT_HOOKS := .git/hooks/applied
 $(GIT_HOOKS):

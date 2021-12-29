@@ -70,7 +70,7 @@ static int diva_i2c_probe(struct platform_device *pdev)
     if (ret < 0)
         goto del_adap;
 
-    pr_info("Connect to diva %s\n", adap->name);
+    pr_info("Connect to diva adap %s\n", adap->name);
     return 0;
 
 del_adap:
