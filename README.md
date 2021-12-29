@@ -17,7 +17,7 @@ To build and insert these module, using the following command. Note that the seq
 insert each module is important for kerenl to match our device and driver correctly.
 
 ```
-$ make
+$ make subdirs
 $ make -C pdev insert
 $ make -C adap insert
 $ make -C diva-dev insert
