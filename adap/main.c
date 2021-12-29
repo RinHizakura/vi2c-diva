@@ -98,4 +98,4 @@ module_platform_driver(diva_i2c_driver);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("RinHizakura");
-MODULE_DESCRIPTION("The virtual \"diva\" I2c bus adapter \"diva\"");
+MODULE_DESCRIPTION("The virtual \"diva\" I2c bus adapter");
