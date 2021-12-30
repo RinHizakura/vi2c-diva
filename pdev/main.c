@@ -6,7 +6,7 @@
 static void diva_i2c_dummy_release(struct device *dev) {}
 static struct platform_device diva_pdev = {
     .name = "i2c-diva",
-    .id = -1,
+    .id = PLATFORM_DEVID_NONE,
     .dev.release = diva_i2c_dummy_release,
 };
 
