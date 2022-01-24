@@ -15,7 +15,25 @@ static int diva_i2c_xfer(struct i2c_adapter *adap,
                          struct i2c_msg msgs[],
                          int num)
 {
+    int i;
+    struct diva_i2c_dev *i2c_dev = i2c_get_adapdata(adap);
+    struct i2c_msg *msg = &msgs[0];
+    char key[4] = "VIVY";
+
+    /* FIXME: I think it is possible to provide some funny protocal here to
+     * show more for the i2c subsystem interface. But I don't have any
+     * interesting idea currently QAQ */
+    if (msg->addr != 0x1)
+        goto xfer_fail;
+
+    for (i = 0; i < 4; i++)
+        if (msg->buf[i] != key[i])
+            goto xfer_fail;
+
     return 0;
+
+xfer_fail:
+    return -EIO;
 }
 
 static u32 diva_i2c_func(struct i2c_adapter *adap)
