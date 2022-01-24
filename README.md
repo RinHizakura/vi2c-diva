@@ -31,6 +31,7 @@ $ dmesg
 [diva-pdev] Init diva with status 0
 [i2c-diva-adap] Connect to diva adap i2c-diva
 [i2c-diva-dev] Connect to diva dev vi2c,diva-i2c
+[i2c-diva-dev] Transfer message: PASS
 ```
 
 To remove the module from kernel, using the following command.
